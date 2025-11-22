@@ -1,192 +1,110 @@
-🏙️ Real Estate AI Dashboard
-AI-powered locality analysis, chart visualization, and smart PDF report generation
+# 🏙️ Real Estate AI Dashboard  
+A full-stack AI-assisted real-estate analytics dashboard built using **React (Vite) + Django REST Framework**.  
+The system generates **price trends, demand trends, filtered datasets**, and allows users to **download full PDF reports with charts**.
 
-The Real Estate AI Dashboard is a full-stack application that allows users to analyze real-estate trends using natural language queries.
-Users can ask questions like:
+---
 
-"Give me analysis of Wakad"
+## 🚀 Features
 
-"Compare Kothrud and Aundh demand trend"
+### 🔹 AI-Based Natural Query Input  
+Users can ask queries like:  
+- *"Show price growth for Wakad last 3 years"*  
+- *"Compare Aundh and Baner demand trend"*  
 
-"Show price growth for Akurdi over the last 3 years"
+### 🔹 Interactive Charts  
+- Price Trend (Line Chart)  
+- Demand Trend (Line Chart)  
+- Auto-exported to PDF
 
-The system automatically:
-✔ Extracts locality names
-✔ Filters dataset
-✔ Generates price & demand charts
-✔ Produces summaries
-✔ And exports everything into a professional PDF report (charts + table)
+### 🔹 Filtered Dataset Table  
+- Clean tabular view  
+- Scrollable and responsive  
+- Auto-included in PDF
 
-⭐ Features
-🔍 Natural Language Query Analysis
+### 🔹 PDF Report Generation  
+Backend generates a **beautiful PDF** containing:  
+- Summary  
+- Charts (Price + Demand)  
+- Filtered dataset table
 
-Users can ask questions in plain English — the backend extracts locations automatically.
+### 🔹 Modern UI  
+- Light/Dark mode  
+- Premium dashboard layout  
+- Fully responsive
 
-📊 Interactive Visual Charts
+---
 
-Price Trend
+## 🛠️ Tech Stack
 
-Demand Trend
+### **Frontend**
+- React + Vite  
+- Chart.js  
+- CSS (custom design system)  
 
-Multi-city comparison
+### **Backend**
+- Python  
+- Django REST Framework  
+- Pandas (data processing)  
+- ReportLab (PDF generation)
 
-Built with Chart.js + React.
+---
 
-🗂️ Smart Filtered Dataset
 
-Only the relevant locality data is displayed.
+---
 
-📄 One-click PDF Report
+## 🔧 How to Run the Project Locally
 
-PDF includes:
+### ✅ **Backend Setup (Django)**
 
-Summary
-
-Price chart
-
-Demand chart
-
-Filtered dataset table
-
-Works for single & multiple locations.
-
-🌙 Light/Dark Mode
-
-Smooth theme toggle saved in localStorage.
-
-🚀 Fully Responsive UI
-
-Premium dashboard-style layout with modern animations and styling.
-
-🛠️ Tech Stack
-🎨 Frontend
-
-React (Vite) – Fast UI rendering
-
-Chart.js – For professional charts
-
-CSS3 – Custom premium UI
-
-Fetch API – For API communication
-
-⚙️ Backend
-
-Python (Django) – Stable & scalable backend
-
-Pandas – Data filtering & analysis
-
-ReportLab – PDF report generation
-
-Regex – Query locality extraction
-
-OpenAI API (Optional) – For AI summaries (mocked in your version)
-
-🗄️ Database / Data
-
-Excel data source (Sample_data.xlsx)
-
-Easily extendable to PostgreSQL/MySQL later
-
-📂 Project Structure (Simplified)
-backend/
-│── views.py
-│── utils.py
-│── views_download_full.py
-│── data/Sample_data.xlsx
-
-frontend/
-│── src/
-│   ├── App.jsx
-│   ├── styles.css
-│   ├── components/
-│   │    ├── ChatInput.jsx
-│   │    ├── ChartBox.jsx
-│   │    ├── Result.jsx
-│   │    ├── ComparisonResult.jsx
-│   │
-│── index.html
-
-🚀 How to Run Locally
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/real-estate-ai-dashboard.git
-cd real-estate-ai-dashboard
-
-2️⃣ Backend Setup (Django)
-Install dependencies
+#### **Step 1 — Move to backend folder**
+```bash
 cd backend
+
+Step 2 — Create virtual environment
+bash
+Copy code
+python -m venv venv
+
+Step 3 — Activate Environment
+Windows
+
+bash
+Copy code
+venv\Scripts\activate
+Mac/Linux
+
+bash
+Copy code
+source venv/bin/activate
+
+Step 4 — Install dependencies
+bash
+Copy code
 pip install -r requirements.txt
 
-Required Environment Variables
-
-Create a .env file inside /backend:
-
-OPENAI_KEY=your_api_key_here   # Optional (mock mode works without it)
-
-Run backend server
-
-python -m venv venv
-venv\Scripts\activate
-
+Step 5 — Run Django server
+bash
+Copy code
 python manage.py runserver
+Backend will start on:
 
+cpp
+Copy code
+http://127.0.0.1:8000/
 
-Backend runs on:
-👉 http://127.0.0.1:8000
-
-3️⃣ Frontend Setup (React + Vite)
-Install dependencies
+🎨 Frontend Setup (React + Vite)
+Step 1 — Move to frontend folder
+bash
+Copy code
 cd frontend
+
+Step 2 — Install dependencies
+bash
+Copy code
 npm install
 
-Run frontend
+Step 3 — Start React dev server
+bash
+Copy code
 npm run dev
-
-
-Frontend runs on something like:
-👉 http://localhost:5173
-
-🔗 API Endpoints
-POST /api/analyze/
-
-Input:
-
-{ "query": "Give me analysis of Wakad" }
-
-
-Output:
-
-{
-  "summary": "...",
-  "table": [...],
-  "price_chart": {...},
-  "demand_chart": {...}
-}
-
-POST /api/download-full/
-
-Input:
-
-{
-  "areas": [
-    {
-      "name": "Wakad",
-      "summary": "...",
-      "table": [...],
-      "price_chart": "<base64>",
-      "demand_chart": "<base64>"
-    }
-  ]
-}
-
-
-Returns:
-📄 PDF file download
-
-🖼️ Screenshots (Add after upload)
-
-Place your screenshots in /assets/screenshots/ and reference them here:
-<img width="1366" height="646" alt="1" src="https://github.com/user-attachments/assets/6f9121e9-3d11-4b21-8dd0-7459233d336d" />
-<img width="1366" height="538" alt="2" src="https://github.com/user-attachments/assets/ee6a1a2f-b37e-4a98-9f08-12a5fe337a00" />
-<img width="1364" height="336" alt="3" src="https://github.com/user-attachments/assets/8d33a92d-72a0-4b27-8d6a-805cfa3a62f5" />
-<img width="1356" height="425" alt="5" src="https://github.com/user-attachments/assets/d6eed7f9-9dcb-4653-bf53-0583ecbe7533" />
-
+Frontend will start on:
