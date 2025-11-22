@@ -67,44 +67,28 @@ python -m venv venv
 
 Step 3 — Activate Environment
 Windows
-
-bash
-Copy code
 venv\Scripts\activate
-Mac/Linux
 
-bash
-Copy code
+Mac/Linux
 source venv/bin/activate
 
 Step 4 — Install dependencies
-bash
-Copy code
 pip install -r requirements.txt
 
 Step 5 — Run Django server
-bash
-Copy code
 python manage.py runserver
 Backend will start on:
-
-cpp
-Copy code
 http://127.0.0.1:8000/
 
 🎨 Frontend Setup (React + Vite)
+
 Step 1 — Move to frontend folder
-bash
-Copy code
 cd frontend
 
 Step 2 — Install dependencies
-bash
-Copy code
 npm install
 
 Step 3 — Start React dev server
-bash
-Copy code
 npm run dev
 Frontend will start on:
+
